@@ -3,7 +3,7 @@ package lexer
 import (
 	"testing"
 
-	"monkey_interpreter/token"
+	"github.com/divyanshg21/monkey_interpreter/token"
 )
 
 func TestNextToken(t *testing.T) {
@@ -14,7 +14,7 @@ func TestNextToken(t *testing.T) {
 		expectedLiteral string
 	}{
 		{token.ASSIGN, "="},
-		{token.Plus, "+"},
+		{token.PLUS, "+"},
 		{token.LPAREN, "("},
 		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
