@@ -1,10 +1,10 @@
 package parser
 
-import {
+import (
 	"github.com/divyanshg21/monkey_interpreter/ast"
 	"github.com/divyanshg21/monkey_interpreter/lexer"
 	"github.com/divyanshg21/monkey_interpreter/token"
-}
+)
 
 type Parser struct{
 	l *lexer.Lexer
@@ -23,7 +23,7 @@ func New(l*lexer.Lexer) *Parser{
 }
 
 func (p *Parser) nextToken() {
-	p.curToekn = p.peekToken
+	p.curToken = p.peekToken
 	p.peekToken = p.l.NextToken()
 }
 

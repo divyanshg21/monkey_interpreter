@@ -1,4 +1,5 @@
 package ast
+
 import "github.com/divyanshg21/monkey_interpreter/token"
 
 type Node interface {
@@ -19,8 +20,8 @@ type Program struct {
 	Statements []Statement
 }
 
-func (p*Program) TokenLiteral() string {
-	if len(p.Statements)>0{
+func (p *Program) TokenLiteral() string {
+	if len(p.Statements) > 0 {
 		return p.Statements[0].TokenLiteral()
 	} else {
 		return ""
@@ -29,17 +30,17 @@ func (p*Program) TokenLiteral() string {
 
 type LetStatement struct {
 	Token token.Token
-	Name *Identifier
+	Name  *Identifier
 	Value Expression
 }
 
-func (ls *LetStatement)  statementNode()		{}
-func (ls *LetStatement) TokenLiteral() string { return ls.Token.Literal}
+func (ls *LetStatement) statementNode()       {}
+func (ls *LetStatement) TokenLiteral() string { return ls.Token.Literal }
 
-type Identifier struct	{
+type Identifier struct {
 	Token token.Token
-	value string
+	Value string
 }
 
-func (i *Identifier) expressionNode()		{}
-func (i *Identifier) TokenLiteral() string {return i.Token.Literal}
+func (i *Identifier) expressionNode()      {}
+func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
